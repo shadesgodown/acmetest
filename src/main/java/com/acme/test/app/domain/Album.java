@@ -10,9 +10,9 @@ import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name = "vinyl")
-public class Vinyl implements Serializable {
-    private static final Logger LOG = LoggerFactory.getLogger(Vinyl.class);
+@Table(name = "album")
+public class Album implements Serializable {
+    private static final Logger LOG = LoggerFactory.getLogger(Album.class);
     private static final long serialVersionUID = -2283325522913028372L;
 
     @Id
@@ -77,13 +77,13 @@ public class Vinyl implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        final Vinyl vinyl = (Vinyl) o;
+        final Album album = (Album) o;
 
-        if (id != null ? !id.equals(vinyl.id) : vinyl.id != null) return false;
-        if (title != null ? !title.equals(vinyl.title) : vinyl.title != null) return false;
-        if (artist != null ? !artist.equals(vinyl.artist) : vinyl.artist != null) return false;
-        if (label != null ? !label.equals(vinyl.label) : vinyl.label != null) return false;
-        return releaseDate != null ? releaseDate.equals(vinyl.releaseDate) : vinyl.releaseDate == null;
+        if (id != null ? !id.equals(album.id) : album.id != null) return false;
+        if (title != null ? !title.equals(album.title) : album.title != null) return false;
+        if (artist != null ? !artist.equals(album.artist) : album.artist != null) return false;
+        if (label != null ? !label.equals(album.label) : album.label != null) return false;
+        return releaseDate != null ? releaseDate.equals(album.releaseDate) : album.releaseDate == null;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class Vinyl implements Serializable {
             return mapper.writeValueAsString(this);
         } catch (JsonProcessingException e) {
             LOG.warn("Could not serialize object to JSON");
-            return "Vinyl{" +
+            return "Album{" +
                     "id=" + id +
                     ", title='" + title + '\'' +
                     ", artist='" + artist + '\'' +

@@ -1,18 +1,18 @@
 package com.acme.test.app.service;
 
-import com.acme.test.app.domain.Vinyl;
+import com.acme.test.app.domain.Album;
 
 import java.util.List;
 
 public interface ICrudService {
 
-    Vinyl create(Vinyl vinyl);
+    Album create(Album album);
 
-    Vinyl findById(Long id);
+    Album findById(Long id);
 
-    List<Vinyl> findAll();
+    List<Album> findAll();
 
-    void delete(Vinyl vinyl);
+    void delete(Album album);
 
     void deleteById(Long id);
 }

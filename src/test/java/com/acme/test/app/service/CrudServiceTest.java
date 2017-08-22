@@ -1,6 +1,6 @@
 package com.acme.test.app.service;
 
-import com.acme.test.app.domain.Vinyl;
+import com.acme.test.app.domain.Album;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,14 @@ public class CrudServiceTest {
 
     @Test
     public void createTest() throws Exception {
-        Vinyl vinyl = new Vinyl();
-        vinyl.setArtist("Pearl Jam");
-        vinyl.setTitle("Vs");
-        vinyl.setLabel("BMG");
+        Album album = new Album();
+        album.setArtist("Pearl Jam");
+        album.setTitle("Vs");
+        album.setLabel("BMG");
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        vinyl.setReleaseDate(new Date(df.parse("1992-05-26").getTime()));
+        album.setReleaseDate(new Date(df.parse("1992-05-26").getTime()));
 
-        vinyl = crudService.create(vinyl);
-        assertThat(vinyl, equalTo(crudService.findById(vinyl.getId())));
+        album = crudService.create(album);
+        assertThat(album, equalTo(crudService.findById(album.getId())));
     }
 }

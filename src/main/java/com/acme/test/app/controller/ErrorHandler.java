@@ -7,14 +7,18 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @ControllerAdvice
 public class ErrorHandler {
 
-    private final Logger log = LoggerFactory.getLogger(getClass());
+    private static final Logger LOG = LoggerFactory.getLogger(ErrorHandler.class);
 
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public void processValidationError(IllegalArgumentException e) {
-        log.info("Returning HTTP 400 Bad Request", e);
+    public void processValidationError(IllegalArgumentException e, HttpServletResponse response) throws IOException {
+        LOG.info("Returning HTTP 400 Bad Request", e);
+        response.sendError(HttpStatus.BAD_REQUEST.value());
     }
 }

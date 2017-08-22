@@ -1,7 +1,7 @@
 package com.acme.test.app.service;
 
-import com.acme.test.app.domain.Vinyl;
-import com.acme.test.app.repository.IVinylRepository;
+import com.acme.test.app.domain.Album;
+import com.acme.test.app.repository.IAlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,25 +11,25 @@ import java.util.List;
 public class CrudService implements ICrudService {
 
     @Autowired
-    IVinylRepository vinylRepository;
+    IAlbumRepository albumRepository;
 
-    public Vinyl create(Vinyl vinyl) {
-        return vinylRepository.save(vinyl);
+    public Album create(Album album) {
+        return albumRepository.save(album);
     }
 
-    public Vinyl findById(Long id) {
-        return vinylRepository.findOne(id);
+    public Album findById(Long id) {
+        return albumRepository.findOne(id);
     }
 
-    public List<Vinyl> findAll() {
-        return (List<Vinyl>) vinylRepository.findAll();
+    public List<Album> findAll() {
+        return (List<Album>) albumRepository.findAll();
     }
 
-    public void delete(Vinyl vinyl) {
-        vinylRepository.delete(vinyl);
+    public void delete(Album album) {
+        albumRepository.delete(album);
     }
 
     public void deleteById(Long id) {
-        vinylRepository.delete(id);
+        albumRepository.delete(id);
     }
 }

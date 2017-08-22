@@ -35,19 +35,19 @@ public class FibonacciServiceTest {
 //        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
 //        assertThat(result, equalTo(check));
 
-//        List<Long> result = fibonacciService.fibRecTail(93);
-//        List<Long> check = new ArrayList<>(93);
-//        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
-//        assertThat(result, equalTo(check));
+        List<Long> result = fibonacciService.fibRecTail(93);
+        List<Long> check = new ArrayList<>(93);
+        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
+        assertThat(result, equalTo(check));
 
 //        List<Long> result = fibonacciService.fibRecOn(10000);
 //        List<Long> check = new ArrayList<>(10000);
 //        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
 //        assertThat(result, equalTo(check));
 
-        List<Long> result = fibonacciService.fibRecO2Expn(10000);
-        List<Long> check = new ArrayList<>(10000);
-        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
-        assertThat(result, equalTo(check));
+//        List<Long> result = fibonacciService.fibRecO2Expn(10000);
+//        List<Long> check = new ArrayList<>(10000);
+//        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
+//        assertThat(result, equalTo(check));
     }
 }

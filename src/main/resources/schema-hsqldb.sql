@@ -1,11 +1,11 @@
-CREATE SEQUENCE vinyl_id_seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE album_id_seq START WITH 1 INCREMENT BY 1;
 
-CREATE TABLE vinyl(
-  id                  NUMERIC DEFAULT nextval('vinyl_id_seq') NOT NULL,
+CREATE TABLE album(
+  id                  NUMERIC DEFAULT nextval('album_id_seq') NOT NULL PRIMARY KEY,
   title               VARCHAR(255) NOT NULL,
   artist              VARCHAR(255) NOT NULL,
   label               VARCHAR(255) NOT NULL,
   release_date        DATE NOT NULL
 );
 
-ALTER SEQUENCE vinyl_id_seq OWNED BY vinyl.id;
+ALTER SEQUENCE album_id_seq OWNED BY album.id;
