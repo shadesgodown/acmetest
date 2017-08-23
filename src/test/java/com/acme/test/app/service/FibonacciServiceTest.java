@@ -1,5 +1,6 @@
 package com.acme.test.app.service;
 
+import mockit.Deencapsulation;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -13,41 +14,74 @@ public class FibonacciServiceTest {
 
     private IFibonacciService fibonacciService = new FibonacciService();
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibExpValueNegative() {
+        fibonacciService.fibRecO2Expn(41);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibOnValueNegative() {
+        fibonacciService.fibRecOn(-1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibTailRecValueNegative() {
+        fibonacciService.fibRecTail(-1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibExpValueTooHigh() {
+        fibonacciService.fibRecO2Expn(41);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibOnValueTooHigh() {
+        fibonacciService.fibRecO2Expn(94);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibTailRecValueTooHigh() {
+        fibonacciService.fibRecO2Expn(94);
+    }
+
+    @Test(expected = StackOverflowError.class)
+    public void testFibExpStackOverflow() {
+        Deencapsulation.invoke(fibonacciService, "fibRecO2ExpnRaw", 10000);
+    }
+
+    @Test(expected = StackOverflowError.class)
+    public void testFibOnStackOverflow() {
+        Deencapsulation.invoke(fibonacciService, "fibRecOnRaw", 10000);
+    }
+
     @Test
-    public void fibRecTest() {
-//        List<Long> result = fibonacciService.fibRec2(1);
-//        List<Long> check = new ArrayList<>();
-//        check.add(0);
-//        assertThat(result, equalTo(check));
-//
-//        result = fibonacciService.fibRec(2, null);
-//        check = new ArrayList<>(2);
-//        check.addAll(new ArrayList(Arrays.asList(0, 1)));
-//        assertThat(result, equalTo(check));
+    @SuppressWarnings("unchecked")
+    public void testFibTailRecNoStackOverflow() {
+        List<Long> value = (ArrayList<Long>) Deencapsulation.invoke(fibonacciService, "fibRecTailRaw", 10000);
+        assertThat(value.size(), equalTo(10000));
+    }
 
-//        List<Long> result = fibonacciService.fibRecO2Expn(7);
-//        List<Long> check = new ArrayList<>(7);
-//        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
-//        assertThat(result, equalTo(check));
-
-//        List<Long> result = fibonacciService.fibRecOn(6);
-//        List<Long> check = new ArrayList<>(6);
-//        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
-//        assertThat(result, equalTo(check));
-
-        List<Long> result = fibonacciService.fibRecTail(93);
-        List<Long> check = new ArrayList<>(93);
-        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
+    @Test
+    public void testFibExp() {
+        List<Long> result = fibonacciService.fibRecO2Expn(8);
+        List<Long> check = new ArrayList<>(8);
+        check.addAll(new ArrayList(Arrays.asList(0l, 1l, 1l, 2l, 3l, 5l, 8l, 13l)));
         assertThat(result, equalTo(check));
+    }
 
-//        List<Long> result = fibonacciService.fibRecOn(10000);
-//        List<Long> check = new ArrayList<>(10000);
-//        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
-//        assertThat(result, equalTo(check));
+    @Test
+    public void testFibOn() {
+        List<Long> result = fibonacciService.fibRecOn(8);
+        List<Long> check = new ArrayList<>(8);
+        check.addAll(new ArrayList(Arrays.asList(0l, 1l, 1l, 2l, 3l, 5l, 8l, 13l)));
+        assertThat(result, equalTo(check));
+    }
 
-//        List<Long> result = fibonacciService.fibRecO2Expn(10000);
-//        List<Long> check = new ArrayList<>(10000);
-//        check.addAll(new ArrayList(Arrays.asList(0, 1, 1)));
-//        assertThat(result, equalTo(check));
+    @Test
+    public void testFibTailRec() {
+        List<Long> result = fibonacciService.fibRecTail(8);
+        List<Long> check = new ArrayList<>(8);
+        check.addAll(new ArrayList(Arrays.asList(0l, 1l, 1l, 2l, 3l, 5l, 8l, 13l)));
+        assertThat(result, equalTo(check));
     }
 }

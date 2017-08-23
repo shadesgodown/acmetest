@@ -15,7 +15,7 @@ public class CrudController {
     private static final Logger LOG = LoggerFactory.getLogger(CrudController.class);
 
     @Autowired
-    ICrudService crudService;
+    private ICrudService crudService;
 
     @RequestMapping(value = "/album/{id}", method = RequestMethod.GET)
     public Response getAlbum(@PathVariable final Long id) {

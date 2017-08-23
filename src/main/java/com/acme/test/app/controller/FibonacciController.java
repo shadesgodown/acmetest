@@ -17,7 +17,7 @@ public class FibonacciController {
     private static final Logger LOG = LoggerFactory.getLogger(FibonacciController.class);
 
     @Autowired
-    IFibonacciService fibonacciService;
+    private IFibonacciService fibonacciService;
 
     @RequestMapping(value = "/fibExp/{num}", method = RequestMethod.GET)
     public Response fibExp(@PathVariable("num") final int num) {
@@ -25,9 +25,9 @@ public class FibonacciController {
         return new Response(ResponseType.FIBONACCI, fibonacciService.fibRecO2Expn(num));
     }
 
-    @RequestMapping(value = "/fibConstant/{num}", method = RequestMethod.GET)
-    public Response fibConstant(@PathVariable("num") final int num) {
-        LOG.info("Called fibConstant endpoint");
+    @RequestMapping(value = "/fibOn/{num}", method = RequestMethod.GET)
+    public Response fibOn(@PathVariable("num") final int num) {
+        LOG.info("Called fibOn endpoint");
         return new Response(ResponseType.FIBONACCI, fibonacciService.fibRecOn(num));
     }
 

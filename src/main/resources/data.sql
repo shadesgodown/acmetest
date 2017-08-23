@@ -1,0 +1,1 @@
+INSERT INTO album (id, title, artist, label, release_date) VALUES (null, 'Ten', 'Pearl Jam', 'Epic', '1991-01-01');

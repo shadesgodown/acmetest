@@ -10,7 +10,7 @@ public class DeadlockServiceTest {
     private IDeadlockService deadlockService = new DeadlockService();
 
     @Test
-    public void deadlockTest() throws InterruptedException {
+    public void testDeadlock() throws InterruptedException {
         assertThat(deadlockService.createDeadlock(), is(true));
     }
 }
