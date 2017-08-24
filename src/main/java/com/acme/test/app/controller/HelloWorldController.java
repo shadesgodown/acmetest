@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorldController {
-
     private static final Logger LOG = LoggerFactory.getLogger(HelloWorldController.class);
 
     @RequestMapping(value = "/helloworld", method = RequestMethod.GET)

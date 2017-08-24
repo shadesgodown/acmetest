@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CrudController {
-
     private static final Logger LOG = LoggerFactory.getLogger(CrudController.class);
 
     @Autowired

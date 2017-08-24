@@ -12,7 +12,6 @@ import java.io.IOException;
 
 @ControllerAdvice
 public class ErrorHandler {
-
     private static final Logger LOG = LoggerFactory.getLogger(ErrorHandler.class);
 
     @ExceptionHandler(IllegalArgumentException.class)

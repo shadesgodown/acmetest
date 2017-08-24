@@ -9,6 +9,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 
+/**
+ * Entity that represents an album that can be stored in its repository.
+ */
 @Entity
 @Table(name = "album")
 public class Album implements Serializable {
@@ -32,46 +35,99 @@ public class Album implements Serializable {
     @Column(name="release_date", nullable = false)
     private Date releaseDate;
 
+    /**
+     * Gets the <code>Album</code> id.
+     *
+     * @return the <code>Album</code> id
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Sets the <code>Album</code> id.
+     *
+     * @param id the <code>Album</code> id
+     */
     public void setId(final Long id) {
         this.id = id;
     }
 
+    /**
+     * Gets the <code>Album</code> title.
+     *
+     * @return the <code>Album</code> title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Sets the <code>Album</code> title.
+     *
+     * @param title the <code>Album</code> title
+     */
     public void setTitle(final String title) {
         this.title = title;
     }
 
+    /**
+     * Gets the <code>Album</code> artist.
+     *
+     * @return the <code>Album</code> artist
+     */
     public String getArtist() {
         return artist;
     }
 
+    /**
+     * Sets the <code>Album</code> artist.
+     *
+     * @param artist the <code>Album</code> artist
+     */
     public void setArtist(final String artist) {
         this.artist = artist;
     }
 
+    /**
+     * Gets the <code>Album</code> label.
+     *
+     * @return the <code>Album</code> label
+     */
     public String getLabel() {
         return label;
     }
 
+    /**
+     * Sets the <code>Album</code> label.
+     *
+     * @param label the <code>Album</code> label
+     */
     public void setLabel(final String label) {
         this.label = label;
     }
 
+    /**
+     * Gets the <code>Album</code> release date.
+     *
+     * @return the <code>Album</code> release date
+     */
     public Date getReleaseDate() {
         return releaseDate;
     }
 
+    /**
+     * Sets the <code>Album</code> release date.
+     *
+     * @param releaseDate the <code>Album</code> release date
+     */
     public void setReleaseDate(final Date releaseDate) {
         this.releaseDate = releaseDate;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
@@ -86,6 +142,9 @@ public class Album implements Serializable {
         return releaseDate != null ? releaseDate.equals(album.releaseDate) : album.releaseDate == null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
@@ -96,10 +155,14 @@ public class Album implements Serializable {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         ObjectMapper mapper = new ObjectMapper();
         try {
+            // uses Jackson ObjectMapper to convert object to JSON String
             return mapper.writeValueAsString(this);
         } catch (JsonProcessingException e) {
             LOG.warn("Could not serialize object to JSON");

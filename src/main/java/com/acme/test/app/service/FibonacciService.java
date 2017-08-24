@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Default implementation used to calculate and return the first <code>n</code> values in the Fibonacci sequence.
+ * Three versions of the algorithm are implemented (one that has exponential complexity, one that
+ * has complexity of O(n) and one that is tail recursive (will not cause a
+ * <code>StackOverflowError</code>).
+ */
 @Service
 public class FibonacciService implements IFibonacciService {
 

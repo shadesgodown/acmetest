@@ -13,10 +13,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Default implementation of service used to create a deadlock scenario between two threads. The threads
+ * simulate a deadlock between a <code>Pedestrian</code> and a <code>Driver</code>
+ * at a <code>Crosswalk</code>, each one waiting for the other to cross.
+ */
 @Service
 public class DeadlockService implements IDeadlockService {
     private static final Logger LOG = LoggerFactory.getLogger(DeadlockService.class);
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean createDeadlock() throws InterruptedException {
         Crosswalk crosswalk = new Crosswalk();
@@ -31,6 +39,7 @@ public class DeadlockService implements IDeadlockService {
         executorService.submit(driver);
         executorService.submit(pedestrian);
 
+        // bean used to determine if deadlocked threads exist
         ThreadMXBean bean = ManagementFactory.getThreadMXBean();
 
         int counter = 0;

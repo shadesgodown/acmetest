@@ -62,6 +62,22 @@ public class FibonacciServiceTest {
     }
 
     @Test
+    public void testFibOne() {
+        List<Long> result = fibonacciService.fibRecOn(1);
+        List<Long> check = new ArrayList<>(1);
+        check.addAll(new ArrayList(Arrays.asList(0l)));
+        assertThat(result, equalTo(check));
+    }
+
+    @Test
+    public void testFibTwo() {
+        List<Long> result = fibonacciService.fibRecOn(2);
+        List<Long> check = new ArrayList<>(2);
+        check.addAll(new ArrayList(Arrays.asList(0l, 1l)));
+        assertThat(result, equalTo(check));
+    }
+
+    @Test
     public void testFibExp() {
         List<Long> result = fibonacciService.fibRecO2Expn(8);
         List<Long> check = new ArrayList<>(8);

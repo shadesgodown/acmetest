@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FibonacciController {
-
     private static final Logger LOG = LoggerFactory.getLogger(FibonacciController.class);
 
     @Autowired
