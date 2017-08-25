@@ -52,22 +52,22 @@ run the following in a separate Terminal session.
     1. ```curl http://localhost:8080/hello-world```
 1. Fibonacci (replace <code>n</code> with the number of Fibonacci
    numbers in the sequence to be calculated)
-    1. Exponential Complexity (O(2^n))
+    1. Exponential Complexity (O(2^n)) (<code>n</code> must be between 1 and 40 or it takes too long)
         1. ```curl http://localhost:8080/fib-exp/{n}```
-    1. O(n) Complexity
+    1. O(n) Complexity (<code>n</code> must be between 1 and 93 or value exceeds <code>Long.MAX_VALUE</code>)
         1. ```curl http://localhost:8080/fib-On/{n}```
-    1. Tail Recursive: Complexity of Calculating Previous Value + (n - 1)
+    1. Tail Recursive: Complexity of Calculating Previous Value + (n - 1) (<code>n</code> must be between 1 and 93 or value exceeds <code>Long.MAX_VALUE</code>)
         1. ```curl http://localhost:8080/fib-tail-rec/{n}```
 1. Deadlock
     1. ```curl http://localhost:8080/deadlock```
 1. CRUD
-    1. Find Album By Id (replace id with number between 1 and 9)
+    1. Find Album By Id (replace <code>id</code> with number between 1 and 9)
         1. ```curl http://localhost:8080/album/{id}```
     1. Find All Albums
         1. ```curl http://localhost:8080/albums```
     1. Create Album (with example body)
         1. ```curl -H "Content-Type: application/json" -X POST -d '{"title":"Vs.", "artist":"Pearl Jam", "label":"Epic"}' http://localhost:8080/album```
-    1. Delete Album By Id (replace id with number between 1 and 9)
+    1. Delete Album By Id (replace <code>id</code> with number between 1 and 9)
         1. ```curl -X DELETE http://localhost:8080/album/{id}```
     1. Delete Album (with example body)
         1. ```curl -H "Content-Type: application/json" -X DELETE -d '{"id":1,"title":"Ten", "artist":"Pearl Jam", "label":"Epic"}' http://localhost:8080/album```
