@@ -10,9 +10,9 @@ import java.util.List;
 public interface IFibonacciService {
     /**
      * Calculates the first <code>n</code> values in the Fibonacci sequence using an
-     * implementation with O(2^n) complexity. This method takes too long to calculate
-     * the sequence after 40 values. An <code>IllegalArgumentException</code> is
-     * thrown if <code>n</code> is less than 1 or greater than 40.
+     * implementation with O(2^n) exponential complexity. This method takes too long
+     * to calculate the sequence after 40 values. An <code>IllegalArgumentException</code>
+     * is thrown if <code>n</code> is less than 1 or greater than 40.
      *
      * @param n the number of values in the sequence to calculate (between 1 and 40)
      * @return <code>List</code> containing the calculated values

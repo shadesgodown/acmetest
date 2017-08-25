@@ -25,7 +25,7 @@ public class HelloWorldControllerTest {
 
     @Test
     public void testHelloWorld() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/helloworld").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/hello-world").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(new Response(ResponseType.HELLO_WORLD, "Hello World!").toString()));
     }

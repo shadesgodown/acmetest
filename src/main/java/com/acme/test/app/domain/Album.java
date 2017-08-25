@@ -32,9 +32,6 @@ public class Album implements Serializable {
     @Column(name="label", nullable = false)
     private String label;
 
-    @Column(name="release_date", nullable = false)
-    private Date releaseDate;
-
     /**
      * Gets the <code>Album</code> id.
      *
@@ -108,24 +105,6 @@ public class Album implements Serializable {
     }
 
     /**
-     * Gets the <code>Album</code> release date.
-     *
-     * @return the <code>Album</code> release date
-     */
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    /**
-     * Sets the <code>Album</code> release date.
-     *
-     * @param releaseDate the <code>Album</code> release date
-     */
-    public void setReleaseDate(final Date releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    /**
      * {@inheritDoc}
      */
     @Override
@@ -139,7 +118,7 @@ public class Album implements Serializable {
         if (title != null ? !title.equals(album.title) : album.title != null) return false;
         if (artist != null ? !artist.equals(album.artist) : album.artist != null) return false;
         if (label != null ? !label.equals(album.label) : album.label != null) return false;
-        return releaseDate != null ? releaseDate.equals(album.releaseDate) : album.releaseDate == null;
+        return label != null ? label.equals(album.label) : album.label == null;
     }
 
     /**
@@ -151,7 +130,6 @@ public class Album implements Serializable {
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (artist != null ? artist.hashCode() : 0);
         result = 31 * result + (label != null ? label.hashCode() : 0);
-        result = 31 * result + (releaseDate != null ? releaseDate.hashCode() : 0);
         return result;
     }
 
@@ -171,7 +149,6 @@ public class Album implements Serializable {
                     ", title='" + title + '\'' +
                     ", artist='" + artist + '\'' +
                     ", label='" + label + '\'' +
-                    ", releaseDate=" + releaseDate +
                     '}';
         }
     }

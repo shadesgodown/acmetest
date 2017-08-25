@@ -32,7 +32,7 @@ public class FibonacciControllerTest {
         List<Long> check = new ArrayList<>(8);
         check.addAll(new ArrayList(Arrays.asList(0l, 1l, 1l, 2l, 3l, 5l, 8l, 13l)));
 
-        mvc.perform(MockMvcRequestBuilders.get("/fibExp/8").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/fib-exp/8").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(new Response(ResponseType.FIBONACCI, check).toString()));
     }
@@ -42,7 +42,7 @@ public class FibonacciControllerTest {
         List<Long> check = new ArrayList<>(8);
         check.addAll(new ArrayList(Arrays.asList(0l, 1l, 1l, 2l, 3l, 5l, 8l, 13l)));
 
-        mvc.perform(MockMvcRequestBuilders.get("/fibOn/8").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/fib-On/8").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(new Response(ResponseType.FIBONACCI, check).toString()));
     }
@@ -52,7 +52,7 @@ public class FibonacciControllerTest {
         List<Long> check = new ArrayList<>(8);
         check.addAll(new ArrayList(Arrays.asList(0l, 1l, 1l, 2l, 3l, 5l, 8l, 13l)));
 
-        mvc.perform(MockMvcRequestBuilders.get("/fibTailRec/8").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/fib-tail-rec/8").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(new Response(ResponseType.FIBONACCI, check).toString()));
     }

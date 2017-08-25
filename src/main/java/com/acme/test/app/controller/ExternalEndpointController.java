@@ -15,13 +15,25 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
+/**
+ * <code>RestController</code> used to request an external endpoint (https://jsonplaceholder.typicode.com/posts)
+ * and return it's content in response.
+ */
 @RestController
 public class ExternalEndpointController {
     private static final Logger LOG = LoggerFactory.getLogger(ExternalEndpointController.class);
 
-    @RequestMapping(value = "/externalEndpoint", method = RequestMethod.GET)
+    /**
+     * Uses Spring's <code>RestTemplate</code> to request the external endpoint (https://jsonplaceholder.typicode.com/posts)
+     * and return it's content in response.
+     *
+     * @return the external endpoint's content wrapped in a <code>Response</code> object with
+     * <code>ResponseType.EXTERNAL_ENDPOINT</code>
+     * @throws IOException if the external endpoint does not return a response successfully
+     */
+    @RequestMapping(value = "/external-endpoint", method = RequestMethod.GET)
     public Response externalEndpoint() throws IOException {
-        LOG.info("Called externalEndpoint endpoint");
+        LOG.info("Called external-endpoint endpoint");
         RestTemplate restTemplate = new RestTemplate();
         String externalEndpointUrl = "https://jsonplaceholder.typicode.com/posts";
         ResponseEntity<String> response = restTemplate.getForEntity(externalEndpointUrl, String.class);

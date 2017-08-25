@@ -29,7 +29,7 @@ public class DeadlockControllerTest {
             result = false;
         }};
 
-        assertThat(deadlockController.deadlock(), equalTo(new Response(ResponseType.DEADLOCK, "Deadlock between Pedestrian and Driver was encountered at the Crosswalk.")));
+        assertThat(deadlockController.deadlock(), equalTo(new Response(ResponseType.DEADLOCK, "Deadlock occurred between Pedestrian and Driver at the Crosswalk.")));
 
         try {
             deadlockController.deadlock();

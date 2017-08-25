@@ -21,7 +21,7 @@ public interface ICrudService {
      * Finds an <code>Album</code> by id in the repository.
      *
      * @param id the id of the <code>Album</code> to find
-     * @return the <code>Album</code> or <code>null</code>
+     * @return the <code>Album</code> or <code>null</code> if not found
      */
     Album findById(Long id);
 
