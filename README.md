@@ -74,4 +74,4 @@ run the following in a separate Terminal session.
 ### Additional Features
 1. JaCoCo code coverage report available at: <code>target/coverage-reports/jacoco-ut/index.html</code>
     1. Current coverage is 62%
-1. JavaDoc available at: <code>target/apidocs/index.html
+1. JavaDoc available at: <code>target/apidocs/index.html</code>
