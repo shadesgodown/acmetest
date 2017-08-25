@@ -26,7 +26,7 @@ public class DeadlockController {
      * Creates a deadlock scenario between two threads (each thread is waiting on the other).
      * Simulates a deadlock between a <code>Pedestrian</code> and a <code>Driver</code>
      * at a <code>Crosswalk</code>, each one waiting for the other to cross. The endpoint
-     * times out after 3 seconds and returns reporting the deadlock state.
+     * times out after 3 seconds and returns the deadlock state.
      *
      * @return a <code>String</code> stating that the deadlock did occur wrapped in
      * a <code>Response</code> object with a <code>ResponseType.DEADLOCK</code>

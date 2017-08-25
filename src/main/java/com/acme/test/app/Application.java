@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 2. Three Fibonacci sequence endpoints that take a number, N, and return an array with
  * the first N Fibonacci numbers. The three endpoints use recursive algorithms of various
  * complexity (exponential O(2^n), O(n), and a tail recursive algorithm).
- * 3. A Deadlock endpoint that causes two threads to become deadlocked and returns reporting
- * the deadlock state after a timeout of 3 seconds. This implementation simulates a real life deadlock
+ * 3. A Deadlock endpoint that causes two threads to become deadlocked and returns
+ * the deadlock state after a timeout of 3 seconds. This implementation simulates a real-life deadlock
  * situation in which a <code>Pedestrian</code> and a <code>Driver</code> are waiting for each other
  * to cross a <code>Crosswalk</code>.
  * 4. Several CRUD endpoints that add, query, and delete rows representing Pearl Jam

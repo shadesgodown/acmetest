@@ -2,16 +2,16 @@ ACME Spring Boot Test Application
 ---------------------------------
 
  A Spring Boot REST test application that has a diverse set of endpoints:  
- 1. A "Hello World" endpoint that basically returns "Hello World"
+ 1. A "Hello World" endpoint that basically returns "Hello World!"
  1. Three Fibonacci sequence endpoints that take a number, N, and return an array with the first 
  N Fibonacci numbers. The three endpoints use recursive algorithms of various complexity
  (exponential O(2^n), O(n), and a tail recursive algorithm).
  1. A Deadlock endpoint that causes two threads to become deadlocked and returns
- reporting the deadlock state after a timeout of 3 seconds. This implementation
- simulates a real life deadlock situation in which a <code>Pedestrian</code> and a
+ the deadlock state after a timeout of 3 seconds. This implementation
+ simulates a real-life deadlock situation in which a <code>Pedestrian</code> and a
  <code>Driver</code> are waiting for each other to cross a <code>Crosswalk</code>.
  1. Several CRUD endpoints that add, query, and delete rows representing Pearl Jam
- <code>Album</code>s from a HyperSQL, in-memory database.
+ <code>Album</code>s from a HyperSQL, in-memory database using a JPA Repository.
  1. An External endpoint that uses Spring <code>RestTemplate</code> to return the data
  from a specific external endpoint (https://jsonplaceholder.typicode.com/posts).
 
@@ -53,7 +53,7 @@ run the following in a separate Terminal session.
         1. ```curl http://localhost:8080/fib-exp/{n}```
     1. O(n) Complexity
         1. ```curl http://localhost:8080/fib-On/{n}```
-    1. Tail Recursive: Complexity of Previous Value + (n - 1)
+    1. Tail Recursive: Complexity of Calculating Previous Value + (n - 1)
         1. ```curl http://localhost:8080/fib-tail-rec/{n}```
 1. Deadlock
     1. ```curl http://localhost:8080/deadlock```
