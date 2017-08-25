@@ -3,7 +3,9 @@ package com.acme.test.app.controller;
 import com.acme.test.app.domain.Response;
 import com.acme.test.app.domain.ResponseType;
 import com.acme.test.app.service.IDeadlockService;
-import mockit.*;
+import mockit.Expectations;
+import mockit.Injectable;
+import mockit.Tested;
 import mockit.integration.junit4.JMockit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,7 +36,7 @@ public class DeadlockControllerTest {
         try {
             deadlockController.deadlock();
             fail();
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             assertThat(ex.getMessage(), equalTo("Deadlock did not occur between Pedestrian and Driver at the Crosswalk."));
         }
     }

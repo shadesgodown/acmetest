@@ -44,7 +44,7 @@ public class DeadlockService implements IDeadlockService {
 
         int counter = 0;
         long[] threadIds = null;
-        while(threadIds == null && counter < 3) {
+        while (threadIds == null && counter < 3) {
             threadIds = bean.findDeadlockedThreads();
             counter++;
             Thread.sleep(1000);

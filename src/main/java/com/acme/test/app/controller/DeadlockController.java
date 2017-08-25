@@ -31,7 +31,7 @@ public class DeadlockController {
      * @return a <code>String</code> stating that the deadlock did occur wrapped in
      * a <code>Response</code> object with a <code>ResponseType.DEADLOCK</code>
      * @throws Exception with a message stating that the deadlock did not occur if
-     * the deadlock is not successful
+     *                   the deadlock is not successful
      */
     @RequestMapping(value = "/deadlock", method = RequestMethod.GET)
     public Response deadlock() throws Exception {

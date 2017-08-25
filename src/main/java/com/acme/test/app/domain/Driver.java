@@ -19,7 +19,7 @@ public class Driver implements ICrosswalkCrosser, Runnable {
      * Constructor to create a <code>Driver</code> that has the passed in name and is trying to cross
      * the passed in <code>Crosswalk</code>.
      *
-     * @param name the name of the <code>Driver</code>
+     * @param name      the name of the <code>Driver</code>
      * @param crosswalk the <code>Crosswalk</code> the <code>Driver</code> is waiting to cross
      */
     public Driver(String name, Crosswalk crosswalk) {

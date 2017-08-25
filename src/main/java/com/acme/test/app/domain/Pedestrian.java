@@ -19,7 +19,7 @@ public class Pedestrian implements ICrosswalkCrosser, Runnable {
      * Constructor to create a <code>Pedestrian</code> that has the passed in name and is trying to cross
      * the passed in <code>Crosswalk</code>.
      *
-     * @param name the name of the <code>Pedestrian</code>
+     * @param name      the name of the <code>Pedestrian</code>
      * @param crosswalk the <code>Crosswalk</code> the <code>Pedestrian</code> is waiting to cross
      */
     public Pedestrian(String name, Crosswalk crosswalk) {

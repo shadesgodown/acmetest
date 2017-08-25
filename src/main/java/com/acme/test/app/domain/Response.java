@@ -22,7 +22,7 @@ public class Response {
      * Constructor to create a response made up of a <code>ResponseType</code>
      * and a response.
      *
-     * @param type the response type (from the <code>ResponseType</code> <code>enum</code>)
+     * @param type     the response type (from the <code>ResponseType</code> <code>enum</code>)
      * @param response the response content
      */
     public Response(ResponseType type, Object response) {

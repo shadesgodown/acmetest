@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
 
 /**
  * Entity that represents an album that can be stored in its repository.
@@ -23,13 +22,13 @@ public class Album implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="title", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name="artist", nullable = false)
+    @Column(name = "artist", nullable = false)
     private String artist;
 
-    @Column(name="label", nullable = false)
+    @Column(name = "label", nullable = false)
     private String label;
 
     /**

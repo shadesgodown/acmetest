@@ -23,7 +23,7 @@ public class ErrorHandler {
      * Sends an <code>HttpStatus.BAD_REQUEST</code> error if an
      * <code>IllegalArgumentException</code> occurs.
      *
-     * @param e the <code>IllegalArgumentException</code> that occurred
+     * @param e        the <code>IllegalArgumentException</code> that occurred
      * @param response the <code>HttpServeltResponse</code> that is used to return the
      *                 <code>HttpStatus.BAD_REQUEST</code> error
      * @throws IOException if the <code>sendError</code> method fails
