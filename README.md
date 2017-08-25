@@ -41,7 +41,7 @@ ACME Spring Boot Test Application
 
 NOTE: Application runs on port 8080. Be careful of port conflicts.
 
-## How to Stop Application
+### How to Stop Application
 1. <code>Ctrl-C</code> or <code>Cmd-C</code> for OS X
 
 ### Example API calls with cURL
